@@ -1,0 +1,338 @@
+- make remote repository
+- make local repository
+- add remote repo to local repo
+- add remote repository to local repo
+- create new files in local repository
+- add new files to staging
+- commit changes 
+- push local repo changes to remote
+
+Terminal Commands: 
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop
+$ mkdir basic_repo
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop
+$ dir
+Atom.lnk
+basic_repo
+blender.lnk
+Computer\ Security\ Principles\ and\ Practice.pdf
+cryptography-and-network-security_-principles-and-practice-7th-global-edition.pdf
+desktop.ini
+Don't\ Starve.url
+GIMP\ 2.10.8.lnk
+GitHub\ Desktop.lnk
+Signals\ and\ Systems.pdf
+test
+Visual\ Studio\ Code.lnk
+Zoom.lnk
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop
+$ cd basic_repo/
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo
+$ dir
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo
+$ git init basic_repo
+Initialized empty Git repository in C:/Users/Liliana/Desktop/basic_repo/basic_repo/.git/
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo
+$ dir
+basic_repo
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo
+$ ls -a
+./  ../  basic_repo/
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo
+$ cd basic_repo/
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ dir
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ ls -a
+./  ../  .git/
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ touch index.html
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ dir
+index.html
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git add .
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ dir
+index.html
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git commit -m "basic repo extercise"
+[master (root-commit) 56d0e1d] basic repo extercise
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote add origin github.com/lilipach/basic_repo
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git push origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git push --set-upstream origin master
+fatal: 'github.com/lilipach/basic_repo' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote add origin https://github.com/lilipach/basic_repo
+fatal: remote origin already exists.
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote show origin
+fatal: 'github.com/lilipach/basic_repo' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote -v
+origin  github.com/lilipach/basic_repo (fetch)
+origin  github.com/lilipach/basic_repo (push)
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote rm origin
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote -v
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote add origin https://github.com/lilipach/basic_repo
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote -v
+origin  https://github.com/lilipach/basic_repo (fetch)
+origin  https://github.com/lilipach/basic_repo (push)
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git push origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git push --set-upstream origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 220 bytes | 220.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/lilipach/basic_repo
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ dir
+index.html
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ touch style.css
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ ls
+index.html  style.css
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git push origin master
+Everything up-to-date
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git add .
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git commit -m "basic repo change 2"
+[master ca0a87a] basic repo change 2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 style.css
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git repositiory -v
+git: 'repositiory' is not a git command. See 'git --help'.
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git repo -v
+git: 'repo' is not a git command. See 'git --help'.
+
+The most similar commands are
+        grep
+        reflog
+        remote
+        repack
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ help
+GNU bash, version 4.4.23(1)-release (x86_64-pc-msys)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                            history [-c] [-d offset] [n] or hist>
+ (( expression ))                        if COMMANDS; then COMMANDS; [ elif C>
+ . filename [arguments]                  jobs [-lnprs] [jobspec ...] or jobs >
+ :                                       kill [-s sigspec | -n signum | -sigs>
+ [ arg... ]                              let arg [arg ...]
+ [[ expression ]]                        local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]          logout [n]
+ bg [job_spec ...]                       mapfile [-d delim] [-n count] [-O or>
+ bind [-lpsvPSVX] [-m keymap] [-f file>  popd [-n] [+N | -N]
+ break [n]                               printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]       pushd [-n] [+N | -N | dir]
+ caller [expr]                           pwd [-LPW]
+ case WORD in [PATTERN [| PATTERN]...)>  read [-ers] [-a array] [-d delim] [->
+ cd [-L|[-P [-e]] [-@]] [dir]            readarray [-n count] [-O origin] [-s>
+ command [-pVv] command [arg ...]        readonly [-aAf] [name[=value] ...] o>
+ compgen [-abcdefgjksuv] [-o option] [>  return [n]
+ complete [-abcdefgjksuv] [-pr] [-DE] >  select NAME [in WORDS ... ;] do COMM>
+ compopt [-o|+o option] [-DE] [name ..>  set [-abefhkmnptuvxBCHP] [-o option->
+ continue [n]                            shift [n]
+ coproc [NAME] command [redirections]    shopt [-pqsu] [-o] [optname ...]
+ declare [-aAfFgilnrtux] [-p] [name[=v>  source filename [arguments]
+ dirs [-clpv] [+N] [-N]                  suspend [-f]
+ disown [-h] [-ar] [jobspec ... | pid >  test [expr]
+ echo [-neE] [arg ...]                   time [-p] pipeline
+ enable [-a] [-dnps] [-f filename] [na>  times
+ eval [arg ...]                          trap [-lp] [[arg] signal_spec ...]
+ exec [-cl] [-a name] [command [argume>  true
+ exit [n]                                type [-afptP] name [name ...]
+ export [-fn] [name[=value] ...] or ex>  typeset [-aAfFgilnrtux] [-p] name[=v>
+ false                                   ulimit [-SHabcdefiklmnpqrstuvxPT] [l>
+ fc [-e ename] [-lnr] [first] [last] o>  umask [-p] [-S] [mode]
+ fg [job_spec]                           unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do COMMAND>  unset [-f] [-v] [-n] [name ...]
+ for (( exp1; exp2; exp3 )); do COMMAN>  until COMMANDS; do COMMANDS; done
+ function name { COMMANDS ; } or name >  variables - Names and meanings of so>
+ getopts optstring name [arg]            wait [-n] [id ...]
+ hash [-lr] [-p pathname] [-dt] [name >  while COMMANDS; do COMMANDS; done
+ help [-dms] [pattern ...]               { COMMANDS ; }
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git remote -v
+origin  https://github.com/lilipach/basic_repo (fetch)
+origin  https://github.com/lilipach/basic_repo (push)
+
+Liliana@DESKTOP-DPPPUNI MINGW64 ~/Desktop/basic_repo/basic_repo (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 252 bytes | 252.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/lilipach/basic_repo
+   56d0e1d..ca0a87a  master -> master
+
